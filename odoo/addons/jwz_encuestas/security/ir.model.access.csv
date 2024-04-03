@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_jwz_encuestas_encuesta_users,jwz_encuestas.encuesta,model_jwz_encuestas_encuesta,base.group_user,1,1,1,0
+access_jwz_encuestas_pregunta_users,jwz_encuestas.pregunta,model_jwz_encuestas_pregunta,base.group_user,1,1,1,0
+access_jwz_encuestas_respuestas_users,jwz_encuestas.respuestas,model_jwz_encuestas_respuestas,base.group_user,1,1,1,0
+access_jwz_encuestas_respuestat_users,jwz_encuestas.respuestat,model_jwz_encuestas_respuestat,base.group_user,1,1,1,0
+access_jwz_encuestas_opcionseleccion_users,jwz_encuestas.opcionseleccion,model_jwz_encuestas_opcionseleccion,base.group_user,1,1,1,0
+
+access_jwz_encuestas_encuesta_manager,jwz_encuestas.encuesta,model_jwz_encuestas_encuesta,base.group_erp_manager,1,1,1,1
+access_jwz_encuestas_pregunta_manager,jwz_encuestas.pregunta,model_jwz_encuestas_pregunta,base.group_erp_manager,1,1,1,1
+access_jwz_encuestas_respuestas_manager,jwz_encuestas.respuestas,model_jwz_encuestas_respuestas,base.group_erp_manager,1,1,1,1
+access_jwz_encuestas_respuestat_manager,jwz_encuestas.respuestat,model_jwz_encuestas_respuestat,base.group_erp_manager,1,1,1,1
+access_jwz_encuestas_opcionseleccion_manager,jwz_encuestas.opcionseleccion,model_jwz_encuestas_opcionseleccion,base.group_erp_manager,1,1,1,1

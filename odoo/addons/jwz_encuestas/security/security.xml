@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data >
+        <record id="encuesta_id" model="ir.module.category">
+            <field name="name">Encuesta</field>
+            <field name="description">Creación de encuestas</field>
+        </record>
+
+        <record id="encuesta_user" model="res.groups">
+            <field name="name">Encuesta / Usuario</field>
+            <field name="comment">Usuario con permisos básicos</field>
+            <field name="category_id" ref="encuesta_id" />
+            <field name="users" eval="[(4,ref('base.group_user'))]" />
+        </record>
+
+        <record id="encuesta_manager" model="res.groups">
+            <field name="name">Encuesta / Responsable</field>
+            <field name="comment">Usuario con permisos de supervisor</field>
+            <field name="category_id" ref="encuesta_id" />
+            <field name="implied_ids" eval="[(4,ref('encuesta_user'))]" />
+            <field name="users" eval="[(4,ref('base.user_root')),(4,ref('base.group_erp_manager'))]" />
+        </record>
+
+    </data>
+</odoo>

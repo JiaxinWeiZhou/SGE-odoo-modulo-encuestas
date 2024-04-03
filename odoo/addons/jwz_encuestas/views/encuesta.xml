@@ -1,0 +1,113 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="jwz_encuestas_encuesta_view_tree">
+      <field name="name">Encuestas</field>
+      <field name="model">jwz_encuestas.encuesta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="imagen" />
+          <field name="name" />
+          <field name="descripcion" />
+          <field name="estado" />
+          <field name="preguntas_ids" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="jwz_encuestas_encuesta_view_search">
+      <field name="name">Encuestas</field>
+      <field name="model">jwz_encuestas.encuesta</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Título"/>
+          <field name="estado" string="Estado"/>
+          <filter string="Borrador" name="borrador" domain="[('estado', '=', 'borrador')]"/>
+          <filter string="En Curso" name="en_curso" domain="[('estado', '=', 'en_curso')]"/>
+          <filter string="Finalizada" name="finalizada" domain="[('estado', '=', 'finalizada')]"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="jwz_encuestas_encuesta_view_form">
+      <field name="name">Encuesta</field>
+      <field name="model">jwz_encuestas.encuesta</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="imagen" widget="image" options="{'size': [100,100]}" />
+              <field name="name" />
+              <field name="descripcion" />
+              <field name="estado" />
+            </group>
+            <notebook>
+              <page name="Preguntas">
+                <field name="preguntas_ids" widget="many2many_kanban">
+                  <kanban>
+                    <templates>
+                      <t t-name="kanban-box">
+                        <div>
+                          <div>
+                            <field name="name" />
+                          </div>
+                          <div>
+                            <field name="tipo" />
+                          </div>
+                        </div>
+                      </t>
+                    </templates>
+                  </kanban>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="jwz_encuestas_encuesta_view_kanban">
+      <field name="name">Encuestas </field>
+      <field name="model">jwz_encuestas.encuesta</field>
+      <field name="arch" type="xml">
+          <kanban default_group_by="estado">
+            <field name="name" />
+            <field name="descripcion" />
+            <field name="estado" />
+            <field name="imagen" />
+            <templates>
+              <t t-name="kanban-box" >
+                <div class="oe_kanban_global_click">
+                  <div class="oe_kanban_image">
+                    <field name="imagen" widget="image" options="{'size': [100,100]}" />
+                  </div>
+                  <div class="oe_kanban_details">
+                    <strong>
+                      <field name="name" />
+                    </strong>
+                    <p>
+                      <field name="estado" />
+                    </p>
+                    <p>
+                      <field name="descripcion" />
+                    </p>
+                  </div>
+                </div>
+              </t>
+            </templates>
+          </kanban>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="jwz_encuestas_encuesta_view_graph">
+      <field name="name">Gráfico de Encuestas por Estado</field>
+      <field name="model">jwz_encuestas.encuesta</field>
+      <field name="arch" type="xml">
+        <graph string="Encuestas por Estado" type="bar">
+          <field name="estado"/>
+          <field name="id" type="count" string="Número de Encuestas"/>
+        </graph>
+      </field>
+    </record>
+
+  </data>
+</odoo>

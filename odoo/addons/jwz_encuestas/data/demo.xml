@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- primera encuesta -->
+    <record model="jwz_encuestas.encuesta" id="encuesta_encuesta_1">
+      <field name="name">Encuesta de Satisfacción</field>
+      <field name="descripcion">Encuesta para medir la satisfacción del cliente</field>
+      <field name="estado">borrador</field>
+      <field name="imagen" type="base64" file="jwz_encuestas/static/img/encuesta1_imagen.png" />
+    </record>
+
+    <record model="jwz_encuestas.pregunta" id="encuesta_pregunta_1">
+      <field name="name">¿Cómo calificaría nuestro servicio?</field>
+      <field name="tipo">Seleccion</field>
+      <field name="encuestas_ids" eval="[(4, ref('encuesta_encuesta_1'))]" />
+    </record>
+
+    <record model="jwz_encuestas.respuestas" id="encuesta_respuesta_s_1">
+      <field name="name">Seleccion Servicio</field>
+      <field name="pregunta_id" ref="encuesta_pregunta_1" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_muy_bueno">
+      <field name="name">1</field>
+      <field name="opcion">Muy Bueno</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_1" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_bueno">
+      <field name="name">2</field>
+      <field name="opcion">Bueno</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_1" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_regular">
+      <field name="name">3</field>
+      <field name="opcion">Regular</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_1" />
+    </record>
+
+    <record model="jwz_encuestas.pregunta" id="encuesta_pregunta_2">
+      <field name="name">¿Tiene algún comentario adicional?</field>
+      <field name="tipo">Texto</field>
+      <field name="encuestas_ids" eval="[(4, ref('encuesta_encuesta_1'))]" />
+    </record>
+
+    <record model="jwz_encuestas.respuestat" id="encuesta_respuesta_t_1">
+      <field name="pregunta_id" ref='encuesta_pregunta_2' />
+      <field name="name">Respuesta comentario</field>
+      <field name="respuesta">El servicio fue rápido y eficiente.</field>
+    </record>
+
+    <record model="jwz_encuestas.pregunta" id="encuesta_pregunta_4">
+      <field name="name">¿Qué mejoras sugeriría para nuestros servicios?</field>
+      <field name="tipo">Texto</field>
+      <field name="encuestas_ids" eval="[(4, ref('encuesta_encuesta_1'))]" />
+    </record>
+
+    <record model="jwz_encuestas.respuestat" id="encuesta_respuesta_t_2">
+      <field name="pregunta_id" ref='encuesta_pregunta_4' />
+      <field name="name">Respuesta sugerida</field>
+      <field name="respuesta">Me gustaría ver una mayor variedad de productos disponibles.</field>
+    </record>
+
+    <!-- Segunda encuesta -->
+    <record model="jwz_encuestas.encuesta" id="encuesta_encuesta_2">
+      <field name="name">Encuesta de Producto</field>
+      <field name="descripcion">Encuesta para recopilar comentarios sobre nuestros productos</field>
+      <field name="estado">finalizada</field>
+      <field name="imagen" type="base64" file="jwz_encuestas/static/img/encuesta2_imagen.jpg" />
+    </record>
+
+    <record model="jwz_encuestas.pregunta" id="encuesta_pregunta_3">
+      <field name="name">¿Cómo calificaría nuestro producto?</field>
+      <field name="tipo">Seleccion</field>
+      <field name="encuestas_ids" eval="[(4, ref('encuesta_encuesta_2'))]" />
+    </record>
+
+    <record model="jwz_encuestas.respuestas" id="encuesta_respuesta_s_2">
+      <field name="name">Seleccion Producto</field>
+      <field name="pregunta_id" ref="encuesta_pregunta_3" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_muy_bueno_2">
+      <field name="name">1</field>
+      <field name="opcion">Muy Bueno</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_2" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_bueno_2">
+      <field name="name">2</field>
+      <field name="opcion">Bueno</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_2" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_regular_2">
+      <field name="name">3</field>
+      <field name="opcion">Regular</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_2" />
+    </record>
+
+    <record model="jwz_encuestas.pregunta" id="encuesta_pregunta_4">
+      <field name="name">¿Qué producto le gustaría que desarrolláramos a continuación?</field>
+      <field name="tipo">Texto</field>
+      <field name="encuestas_ids" eval="[(4, ref('encuesta_encuesta_2'))]" />
+    </record>
+
+    <record model="jwz_encuestas.respuestat" id="encuesta_respuesta_t_2">
+      <field name="pregunta_id" ref='encuesta_pregunta_4' />
+      <field name="name">Sugerencia producto</field>
+      <field name="respuesta">Me gustaría que desarrollaran un nuevo modelo de teléfono móvil.</field>
+    </record>
+
+    <!-- Tercera encuesta -->
+    <record model="jwz_encuestas.encuesta" id="encuesta_encuesta_3">
+      <field name="name">Encuesta de Calidad</field>
+      <field name="descripcion">Encuesta para evaluar la calidad de nuestros servicios</field>
+      <field name="estado">borrador</field>
+      <field name="imagen" type="base64" file="jwz_encuestas/static/img/encuesta3_imagen.png" />
+    </record>
+
+    <record model="jwz_encuestas.pregunta" id="encuesta_pregunta_5">
+      <field name="name">¿Está satisfecho con el tiempo de entrega de nuestros productos?</field>
+      <field name="tipo">Seleccion</field>
+      <field name="encuestas_ids" eval="[(4, ref('encuesta_encuesta_3'))]" />
+    </record>
+
+    <record model="jwz_encuestas.respuestas" id="encuesta_respuesta_s_3">
+      <field name="name">Seleccion Tiempo de Entrega</field>
+      <field name="pregunta_id" ref="encuesta_pregunta_5" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_si">
+      <field name="name">1</field>
+      <field name="opcion">Sí</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_3" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_no">
+      <field name="name">2</field>
+      <field name="opcion">No</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_3" />
+    </record>
+
+    <record model="jwz_encuestas.pregunta" id="encuesta_pregunta_6">
+      <field name="name">¿Qué aspectos considera más importantes en la calidad de nuestros productos?</field>
+      <field name="tipo">Texto</field>
+      <field name="encuestas_ids" eval="[(4, ref('encuesta_encuesta_3'))]" />
+    </record>
+
+    <record model="jwz_encuestas.respuestat" id="encuesta_respuesta_t_3">
+      <field name="pregunta_id" ref='encuesta_pregunta_6' />
+      <field name="name">Aspectos importantes</field>
+      <field name="respuesta">La durabilidad y la funcionalidad son aspectos clave.</field>
+    </record>
+
+    <!-- Cuarta encuesta -->
+    <record model="jwz_encuestas.encuesta" id="encuesta_encuesta_4">
+      <field name="name">Encuesta de Experiencia de Usuario</field>
+      <field name="descripcion">Encuesta para evaluar la experiencia de usuario en nuestra plataforma</field>
+      <field name="estado">en_curso</field>
+      <field name="imagen" type="base64" file="jwz_encuestas/static/img/encuesta4_imagen.png" />
+    </record>
+
+    <record model="jwz_encuestas.pregunta" id="encuesta_pregunta_7">
+      <field name="name">¿Encuentra fácil de usar nuestra plataforma?</field>
+      <field name="tipo">Seleccion</field>
+      <field name="encuestas_ids" eval="[(4, ref('encuesta_encuesta_4'))]" />
+    </record>
+
+    <record model="jwz_encuestas.respuestas" id="encuesta_respuesta_s_4">
+      <field name="name">Seleccion Experiencia de Usuario</field>
+      <field name="pregunta_id" ref="encuesta_pregunta_7" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_si_2">
+      <field name="name">1</field>
+      <field name="opcion">Sí</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_4" />
+    </record>
+
+    <record model="jwz_encuestas.opcionseleccion" id="opcion_no_2">
+      <field name="name">2</field>
+      <field name="opcion">No</field>
+      <field name="respuesta_id" ref="encuesta_respuesta_s_4" />
+    </record>
+
+    <record model="jwz_encuestas.pregunta" id="encuesta_pregunta_8">
+      <field name="name">¿Qué funcionalidades le gustaría que agregáramos a nuestra plataforma?</field>
+      <field name="tipo">Texto</field>
+      <field name="encuestas_ids" eval="[(4, ref('encuesta_encuesta_4'))]" />
+    </record>
+
+    <record model="jwz_encuestas.respuestat" id="encuesta_respuesta_t_4">
+      <field name="pregunta_id" ref='encuesta_pregunta_8' />
+      <field name="name">Funcionalidades solicitadas</field>
+      <field name="respuesta">Me gustaría poder personalizar mi perfil de usuario.</field>
+    </record>
+</data>
+</odoo>

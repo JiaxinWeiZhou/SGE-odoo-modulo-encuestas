@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="jwz_encuestas_encuesta_action_window">
+            <field name="name">ENCUESTAS</field>
+            <field name="res_model">jwz_encuestas.encuesta</field>
+            <field name="view_mode">tree,form,kanban,search,graph</field>
+        </record>
+        <record model="ir.actions.act_window" id="jwz_encuestas_pregunta_action_window">
+            <field name="name">PREGUNTAS</field>
+            <field name="res_model">jwz_encuestas.pregunta</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="jwz_encuestas_respuestat_action_window">
+            <field name="name">RESPUESTA TEXTO</field>
+            <field name="res_model">jwz_encuestas.respuestat</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="jwz_encuestas_respuestas_action_window">
+            <field name="name">RESPUESTA SELECCION</field>
+            <field name="res_model">jwz_encuestas.respuestas</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="jwz_encuestas_opcionseleccion_window">
+            <field name="name">OPCION</field>
+            <field name="res_model">jwz_encuestas.opcionseleccion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

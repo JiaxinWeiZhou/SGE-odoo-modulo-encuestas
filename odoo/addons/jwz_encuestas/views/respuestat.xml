@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="jwz_ecuestas_respuesta_texto_view_tree">
+      <field name="name">Respuestas de Texto</field>
+      <field name="model">jwz_encuestas.respuestat</field>
+      <field name="arch" type="xml">
+        <tree string="Respuestas Texto">          
+          <field name ="name"/>
+          <field name="respuesta"/>
+          <field name="pregunta_id" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="jwz_ecuestas_respuesta_texto_view_form">
+      <field name="name">Respuesta de Texto</field>
+      <field name="model">jwz_encuestas.respuestat</field>
+      <field name="arch" type="xml">
+        <form string="Respuestas Texto">
+          <group colspan="2" col="2">
+            <field name = "name"/>
+            <field name="respuesta"/>
+            <field name="pregunta_id">
+              <tree>
+                <field name = "name"/>
+                <field name="tipo"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+  </data>
+</odoo>

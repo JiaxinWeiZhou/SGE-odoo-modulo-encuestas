@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="jwz_encuestas_pregunta_view_tree">
+      <field name="name">Preguntas</field>
+      <field name="model">jwz_encuestas.pregunta</field>
+      <field name="arch" type="xml">
+        <tree string="Preguntas">
+          <field name="name" />
+          <field name="tipo" />
+          <field name="encuestas_ids" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="jwz_encuestas_pregunta_view_form">
+      <field name="name">Pregunta</field>
+      <field name="model">jwz_encuestas.pregunta</field>
+      <field name="arch" type="xml">
+        <form string="Formulario pregunta">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="tipo" />
+            </group>
+            <group>
+              <field name="respuesta_t_ids" attrs="{'invisible': [('tipo', '!=', 'Texto')]}">
+                <tree>
+                  <field name="name" />
+                  <field name="respuesta" />
+                  <field name="pregunta_id" />
+                </tree>
+              </field>
+              <field name="respuesta_s_ids" attrs="{'invisible': [('tipo', '!=', 'Seleccion')]}">
+                <tree>
+                  <field name="name" />
+                  <field name="pregunta_id" />
+                  <field name="elegida"/>
+                </tree>
+              </field>
+            </group>
+            <notebook>
+              <page name="Encuestas">
+                <field name="encuestas_ids">
+                  <tree>
+                    <field name="name"/>
+                    <field name="estado"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

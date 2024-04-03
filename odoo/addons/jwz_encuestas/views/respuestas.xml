@@ -1,0 +1,49 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="jwz_encuestas_respuesta_seleccion_view_tree">
+      <field name="name">Respuestas de Selección</field>
+      <field name="model">jwz_encuestas.respuestas</field>
+      <field name="arch" type="xml">
+        <tree string="Respuestas de Selección">
+          <field name="name" />
+          <field name="pregunta_id" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="jwz_encuestas_respuesta_seleccion_view_form">
+      <field name="name">Respuesta de Selección</field>
+      <field name="model">jwz_encuestas.respuestas</field>
+      <field name="arch" type="xml">
+        <form string="Respuesta de Selección">
+          <group>
+            <field name="name" />
+            <field name="pregunta_id">
+              <tree>
+                <field name="name" />
+                <field name="tipo"/>
+              </tree>
+            </field>
+            <field name="elegida">
+              <tree>
+                <field name="name" />
+                <field name="opcion" />
+              </tree>
+            </field>
+          </group>
+          <notebook>
+            <page string="Agregar Opciones">
+              <field name="opciones_ids">
+                <tree>
+                  <field name="name" string="ID" />
+                  <field name="opcion" string="Opción" />
+                </tree>
+              </field>
+            </page>
+          </notebook>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

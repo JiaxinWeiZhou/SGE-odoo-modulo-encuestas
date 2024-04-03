@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <menuitem name="Encuesta" id="jwz_encuestas_encuesta_menu_root" />
+
+        <menuitem id="jwz_encuestas_encuesta_menu" name="Encuestas" action="jwz_encuestas_encuesta_action_window" parent="jwz_encuestas_encuesta_menu_root" />
+
+        <menuitem id="jwz_encuestas_pregunta_menu" name="Preguntas" action="jwz_encuestas_pregunta_action_window" parent="jwz_encuestas_encuesta_menu_root" />
+
+        <menuitem id="jwz_encuestas_respuesta_menu" name="Respuestas" parent="jwz_encuestas_encuesta_menu_root" />
+
+        <menuitem id="jwz_encuestas_respuestat_item" name="Respuesta Texto" action="jwz_encuestas_respuestat_action_window" parent="jwz_encuestas_respuesta_menu" />
+
+        <menuitem id="jwz_encuestas_respuestas_item" name="Respuesta Selección" action="jwz_encuestas_respuestas_action_window" parent="jwz_encuestas_respuesta_menu" />
+    </data>
+</odoo>
