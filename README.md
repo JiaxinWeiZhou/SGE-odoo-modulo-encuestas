@@ -116,3 +116,79 @@ Debes utilizar Git y GitHub. Para ello, se espera que hagas varios _commits_ y _
 Si finalizas tu desarrollo con éxito y aprovechas la potencia de Git y GitHub, podrás realizar un _pull request_, es decir, una petición al propietario del repositorio original para que valore tu propuesta e integre tus cambios (_merge_). Es especialmente conveniente que tu proyecto proporcione datos de demo o hagas un _export_ de la base de datos con ```pg_dump``` o alguna utilidad gráfica.
 
 Quien clone el repositorio original y despliegue el entorno podrá probar tu módulo y todos los otros que hayan quedado integrados.
+
+# ✅ Módulo desarrollado: Encuestas personalizadas
+
+Este es el módulo que he desarrollado como parte del proyecto final de SGE. Permite crear y gestionar encuestas en Odoo con diferentes tipos de preguntas, opciones personalizadas y visualización de resultados.
+
+## 📝 Módulo de Encuestas en Odoo
+
+Este proyecto es un **módulo personalizado de encuestas** desarrollado en **Odoo 16** como parte del módulo de *Sistemas de Gestión Empresarial* en el CFGS de Desarrollo de Aplicaciones Multiplataforma.
+
+Permite a los usuarios crear, gestionar y responder encuestas dinámicas y personalizadas, incluyendo soporte para distintos tipos de preguntas y visualización de resultados mediante vistas Kanban y gráficas.
+
+## 🚀 Funcionalidades Principales
+
+- Creación y edición de encuestas con título, descripción e imagen.
+- Gestión de preguntas con múltiples tipos: texto, selección simple.
+- Definición de opciones de respuesta personalizadas.
+- Vistas disponibles:
+  - **Form y Tree** en todas las clases.
+  - **Kanban y Graph** para visualizar el estado de las encuestas.
+- Filtros de búsqueda por nombre o estado.
+- Control del estado de las encuestas (borrador, publicadas, finalizadas).
+- Restricciones (constraints) para evitar duplicados y garantizar consistencia.
+
+## 🧱 Estructura de Clases (Modelo de Datos)
+
+- **Encuesta**
+  - `name`, `descripcion`, `preguntas_ids`, `imagen`, `estado`
+
+- **Pregunta**
+  - `name`, `encuestas_ids`, `tipo`, `respuesta_t_ids`, `respuesta_s_ids`
+
+- **RespuestaT** (respuesta de tipo texto)
+  - `name`, `pregunta_id`, `respuesta`
+
+- **RespuestaS** (respuesta de selección)
+  - `name`, `pregunta_id`, `opciones_ids`, `elegida`
+
+- **OpcionSeleccion**
+  - `name`, `respuesta_id`, `opcion`
+
+## 📊 Vistas
+
+- **Kanban**: muestra estado visual de las encuestas con agrupación.
+- **Graph**: representación del número de encuestas por estado.
+- **Form y Tree**: en todas las entidades para gestión detallada.
+- **Búsqueda avanzada**: por estado y nombre de encuesta.
+
+## ⚙️ Requisitos Técnicos
+
+- **Odoo 16**
+- Conocimientos en:
+  - XML para vistas
+  - Python (ORM de Odoo)
+  - Relaciones Many2one / One2many
+  - Constraints y dominios
+
+## ⚠️ Problemas Encontrados
+
+Durante el desarrollo, se presentó dificultad al implementar respuestas de selección personalizadas usando `fields.Selection`. La solución fue crear una clase intermedia `OpcionSeleccion`, permitiendo flexibilidad y reutilización a través de relaciones `Many2one` con filtrado mediante `domain`.
+
+## 💡 Mejoras Futuras
+
+- Exportación de encuestas.
+- Informes automáticos de resultados al finalizar una encuesta.
+- Soporte para:
+  - Preguntas de opción múltiple (checkbox/radio)
+  - Preguntas tipo sí/no
+- Fechas de inicio y finalización de encuestas (activación automática).
+- Mejoras visuales y de accesibilidad en las vistas.
+
+## 📚 Bibliografía y Recursos
+
+- [Documentación oficial de Odoo 16](https://www.odoo.com/documentation/16.0/)
+- [Widgets y vistas en Odoo](https://www.odoo.com/documentation/16.0/developer/reference/backend/views.html)
+- [Stack Overflow – filtros y constraints](https://stackoverflow.com/)
+- Más referencias en la [memoria del proyecto][jwz_encuestas_Jiaxin_Wei.pdf](https://github.com/user-attachments/files/20444537/jwz_encuestas_Jiaxin_Wei.pdf)
