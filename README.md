@@ -198,4 +198,4 @@ Durante el desarrollo, se presentó dificultad al implementar respuestas de sele
 - [Documentación oficial de Odoo 16](https://www.odoo.com/documentation/16.0/)
 - [Widgets y vistas en Odoo](https://www.odoo.com/documentation/16.0/developer/reference/backend/views.html)
 - [Stack Overflow – filtros y constraints](https://stackoverflow.com/)
-- Más referencias en la [memoria del proyecto][jwz_encuestas_Jiaxin_Wei.pdf](https://github.com/user-attachments/files/20444537/jwz_encuestas_Jiaxin_Wei.pdf)
+- Más referencias en la memoria del proyecto [jwz_encuestas_Jiaxin_Wei.pdf](https://github.com/user-attachments/files/20444537/jwz_encuestas_Jiaxin_Wei.pdf)
