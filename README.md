@@ -163,14 +163,21 @@ Permite a los usuarios crear, gestionar y responder encuestas dinámicas y perso
 - **Form y Tree**: en todas las entidades para gestión detallada.
 - **Búsqueda avanzada**: por estado y nombre de encuesta.
 
-## ⚙️ Requisitos Técnicos
+## 🖼️ UML
+![UML](https://github.com/user-attachments/assets/f5ce6d6d-614c-4df3-ac16-cb4107304805)
 
-- **Odoo 16**
-- Conocimientos en:
-  - XML para vistas
-  - Python (ORM de Odoo)
-  - Relaciones Many2one / One2many
-  - Constraints y dominios
+## 🖼️ Vista Kanban
+
+![Vista Kanban](https://github.com/user-attachments/assets/28355ee8-0d8e-4899-bd3c-16154cb48b11)
+
+## 📊 Vistas Graph
+
+![Vista Graph 1](https://github.com/user-attachments/assets/33f03fb7-090d-42fc-a796-a5c10897486c)
+![Vista Graph 2](https://github.com/user-attachments/assets/b5b5e9c6-5089-4e25-8ecb-6a989afdb631)
+
+## ➕ Filtros
+
+![Filtros](https://github.com/user-attachments/assets/14fab23b-c940-4435-a4b9-de7c79270262)
 
 ## ⚠️ Problemas Encontrados
 
